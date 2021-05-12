@@ -1,6 +1,6 @@
 .grocerylist, .inputlist, .App {
   font-size: 25px;
-  color: red;
+  color: rgb(0, 0, 0);
   justify-content: space-evenly;
   align-content: center;
   display: flexbox;
@@ -8,7 +8,8 @@
   align-items: center;
   border: black 5px;
   border-style: solid;
-  background-color: whitesmoke;
+  background: rgb(230,217,217);
+  background: linear-gradient(0deg, rgba(230,217,217,1) 9%, rgba(174,183,221,1) 92%);
 }
 h1 {
   text-align: center;
