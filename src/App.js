@@ -1,13 +1,12 @@
 import './App.css';
-import Grocery from './Groceries'
-import InputList from './InputList';
+import Groceries  from './groceries'
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Grocery List</h1>
-      <Grocery/>
-      <InputList/>     
+      <h1>Grocery List App</h1>
+      <Groceries/>
     </div>
   );
 }

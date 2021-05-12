@@ -1,29 +1,47 @@
 import React from 'react'
+import groceries from './StartGroceries'
+import AddToList from './InputList';
+import DisplayList from './displaylist';
+import PurchasedList from './Purchasedlist';
 
-class Groceries extends React.Component {
-    constructor(props) {
-        super(props);
+class Groceries extends React.Component{
+    constructor(){
+        super();
         this.state = {
-            list: [
-                {item: 'kale', units: '1lb', quantity: 2, isPurchased: true},
-                {item: 'Chicken', units: '3lb', quantity: 1, isPurchased: true},
-                {item: 'tomatoes', units: '1lb', quantity: 5, isPurchased: true},
-            ],
-        };        
-    
-    }    
-        render() {
-            return (    
-                <div className="grocerylist">
-                    <div className="list1">
-                        <ul>{this.state.list.map((l, idx, arr) => (
-                            <li key={l}>{l.item +  ' ' + l.units + ' ,Quantity Bought ' + l.quantity}</li>
-                        ))}</ul>
-                    </div>
-                </div>
-            );
+        groceries: groceries,
         }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleChange=(event)=>{
+        let name = event.target.name;
+        let value = event.target.value;
+        this.setState({[name]:value})
+    }
+    handleSubmit=(state,event)=>{
+        const newItem = {
+            item: state.item,
+            units: state.units,
+            quantity: state.quantity,
+            isPurchased: state.isPurchased === "true" ? true : false
+        }
+        this.setState({
+        groceries: [...this.state.groceries, newItem],
+        item: '',
+        units: '',
+        quantity: 0,
+        isPurchased:false
+        }, ()=> console.log(this.state.groceries));
+        event.preventDefault();
+    }
+    render() {
+        return(
+        <div>
+            <AddToList handleSubmit={this.handleSubmit}/>
+            <DisplayList groceries={this.state.groceries}/>
+            <PurchasedList groceries={this.state.groceries}/>
+        </div>
+        );
+    }
 }
-
-
-export default Groceries
+export default Groceries;

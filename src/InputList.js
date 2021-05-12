@@ -1,53 +1,45 @@
 import React from 'react'
 
-const textAreaStyle = { //variable for text input
-    width: 235,
-    margin: 5
-  };
-
 class InputList extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
-            userInput: '',
-            toDoList: []
-        };     
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        item: '',
+        units: '',
+        quantity: 0,
+        isPurchased: false
+        } 
     }
     
-    handleSubmit() {
-        const itemsArray = this.state.userInput.split(',');
+        handleChange=(event)=> {
+        let name = event.target.name;
+        let value = event.target.value
         this.setState({
-            toDoList: itemsArray
-        });
+            [name]: value
+        })
     }
-    handleChange(e) {
-        this.setState({
-            userInput: e.target.value
-        });
-    }
-    
     
     render() {
-        const inputList = this.state.toDoList.map(function(item){
-            return <li>{item}</li>;
-        });
-
         return (    
                 <div className="inputlist">
-                    <textarea
-                    onChange={this.handleChange}
-                    value={this.state.userInput}
-                    style={textAreaStyle}
-                    placeholder="Enter Items"
-                    contentEditable= 'true'
-                    /><br/>
-                    <button onClick={this.handleSubmit}>Create items, seperate with commas</button>
-                    <h3>My Grocery list:</h3>
-                    <ul>{inputList}</ul>
+                    <h3>Add Items:</h3>
+                    <form onSubmit= {(event) => this.props.handleSubmit(this.state, event)}>
+                        <label for="item">Item:
+                            <input type="text" name="item" value={this.state.item} onChange={this.handleChange}/>
+                        </label>
+                        <label for="item">Units:
+                            <input type="text" name="units" value={this.state.units} onChange={this.handleChange}/>
+                        </label>
+                        <label for="item">Qty:
+                            <input type="text" name="quantity" value={this.state.quantity} onChange={this.handleChange}/>
+                        </label>
+                        <label for="item">Purchased:
+                            <input type="text" name="isPurchased" value={this.state.isPurchased} onChange={this.handleChange}/>
+                        </label>
+                            <input type="submit" value="Submit"/>
+                    </form>
                 </div>
-        );
+        )
     }
 
 }
