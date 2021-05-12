@@ -1,38 +1,36 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.grocerylist, .inputlist {
+  font-size: 25px;
+  color: red;
+  justify-content: space-evenly;
+  display: flexbox;
+  width: fit-content;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+h1 {
+  text-align: center;
+  font-size: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.list1 {
+  box-shadow: 0 0 8px blue;
+  border: 2px black;
+  border-style: groove;
+  top: auto;
+  padding: 1px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.inputlist {
+  box-sizing: border-box;
+  box-shadow: 0 0 8px blue;
+  border: 2px black;
+  border-style: groove;
+  top: auto;
+  padding: 1px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
+
