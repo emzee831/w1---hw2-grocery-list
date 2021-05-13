@@ -13,7 +13,7 @@ const groceries = [
         isPurchased: false
     },
     {
-        item: "bananas",
+        item: "Chicken",
         units: "1 lbs",
         quantity: 1,
         isPurchased: false

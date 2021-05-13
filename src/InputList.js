@@ -7,7 +7,7 @@ class InputList extends React.Component {
         item: '',
         units: '',
         quantity: 0,
-        isPurchased: false
+        isPurchased: ''
         } 
     }
     
@@ -36,7 +36,7 @@ class InputList extends React.Component {
                         <label for="item">Purchased:
                             <input type="text" name="isPurchased" value={this.state.isPurchased} onChange={this.handleChange}/>
                         </label>
-                            <input type="submit" value="Submit"/>
+                            <input id="submit-btn" type="submit" value="Submit"/>
                     </form>
                 </div>
         )

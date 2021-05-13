@@ -3,6 +3,7 @@ import groceries from './StartGroceries'
 import AddToList from './InputList';
 import DisplayList from './displaylist';
 import PurchasedList from './Purchasedlist';
+import Displaylist from './displaylist';
 
 class Groceries extends React.Component{
     constructor(){
@@ -12,7 +13,21 @@ class Groceries extends React.Component{
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.removeItem = this.removeItem.bind(this);
+
     }
+
+    handleToggle=(index)=> {
+        let newArry = this.state.groceries.slice()
+        newArry[index].isPurchased = !newArry[index].isPurchased
+        this.setState({groceries: newArry})
+    }
+    removeItem=(index)=> {
+        let newArry1 = this.state.groceries.slice()
+        newArry1.splice(index, 1)
+        this.setState({groceries: newArry1})
+    }
+
     handleChange=(event)=>{
         let name = event.target.name;
         let value = event.target.value;
@@ -30,7 +45,7 @@ class Groceries extends React.Component{
         item: '',
         units: '',
         quantity: 0,
-        isPurchased:false
+        isPurchased:true
         }, ()=> console.log(this.state.groceries));
         event.preventDefault();
     }
@@ -38,7 +53,7 @@ class Groceries extends React.Component{
         return(
         <div>
             <AddToList handleSubmit={this.handleSubmit}/>
-            <DisplayList groceries={this.state.groceries}/>
+            <DisplayList groceries={this.state.groceries} handleToggle={this.handleToggle} removeItem={this.removeItem}/>
             <PurchasedList groceries={this.state.groceries}/>
         </div>
         );

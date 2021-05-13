@@ -1,29 +1,54 @@
 .grocerylist, .inputlist, .App {
   font-size: 25px;
-  color: rgb(0, 0, 0);
-  justify-content: space-evenly;
+  color: rgb(255, 255, 255);
+  position: static;
+  justify-content: center;
   align-content: center;
-  display: flexbox;
+  /* display: flexbox; */
   width: fit-content;
   align-items: center;
   border: black 5px;
   border-style: solid;
   background: rgb(230,217,217);
   background: linear-gradient(0deg, rgba(230,217,217,1) 9%, rgba(174,183,221,1) 92%);
+  background-image: url(https://image.freepik.com/free-vector/abstract-background-with-lines-blend-form-waves_87426-21.jpg) ;
+  background-repeat: no-repeat;
+  background-size: 1200px 1117px;
+  opacity: 0.9;
 }
+
 h1 {
   text-align: center;
   font-size: 50px;
 }
 
+button {
+  size: 10px;
+  background-color: #380bd8; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#submit-btn {
+  size: 10px;
+  background-color: #fa1313; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 .grocery-list {
   box-shadow: 0 0 8px blue;
   border: 2px black;
-  /* border-style: groove;
-  top: auto;
-  padding: 1px;
-  padding-top: 0px;
-  padding-bottom: 0px; */
 }
 
 
@@ -32,10 +57,5 @@ h1 {
   box-sizing: border-box;
   box-shadow: 0 0 8px blue;
   border: 2px black;
-  /* border-style: groove;
-  top: auto;
-  padding: 1px;
-  padding-top: 0px;
-  padding-bottom: 0px; */
 }
 
