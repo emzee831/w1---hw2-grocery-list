@@ -14,7 +14,6 @@ class Groceries extends React.Component{
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.removeItem = this.removeItem.bind(this);
-
     }
 
     handleToggle=(index)=> {
